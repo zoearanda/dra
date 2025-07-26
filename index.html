@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #d4b3f5; /* Fondo elegante que deje ver el título */
+      background-color: #d4b3f5; /* Fondo elegante que permite ver el título */
       color: #333;
       min-height: 100vh;
       display: flex;
@@ -20,22 +20,27 @@
       align-items: center;
     }
     header {
-  text-align: center;
-  background-color: transparent; /* Sin fondo para que se vea el color body */
-  padding: 60px 20px;
-  position: relative;
-  width: 100%;
-  color: white;
-  }
-  header img {
-  width: 180px;
-  border-radius: 50%;
-  border: 4px solid white;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 10px;
-  }
-  header h1 {
+      text-align: center;
+      background-color: transparent;
+      background-size: cover;
+      background-position: center;
+      padding: 60px 20px;
+      position: relative;
+      width: 100%;
+      color: white;
+    }
+    header::after {
+      display: none;
+    }
+    header img {
+      width: 180px;
+      border-radius: 50%;
+      border: 4px solid white;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+    header h1 {
       position: relative;
       font-size: 3.2em;
       margin: 0;
@@ -45,8 +50,8 @@
       background: linear-gradient(to right, #ff9ff3, #feca57);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-  }
-  header h2 {
+    }
+    header h2 {
       font-size: 1.8em;
       font-style: italic;
       letter-spacing: 1px;
@@ -55,8 +60,8 @@
       z-index: 1;
       text-shadow: 1px 1px 3px #752c94;
       color: #f7e1ff;
-  }
-  nav {
+    }
+    nav {
       background-color: #D433FF;
       text-align: center;
       padding: 15px 0;
@@ -276,10 +281,10 @@
   </header>
 
   <nav>
-    <a href="javascript:void(0)" onclick="mostrar('servicios')" tabindex="0">Servicios y Costos</a>
-    <a href="javascript:void(0)" onclick="mostrar('ubicacion')" tabindex="0">Ubicación</a>
-    <a href="javascript:void(0)" onclick="mostrar('informacion')" tabindex="0">Información</a>
-    <a href="javascript:void(0)" onclick="mostrar('agendar')" tabindex="0">Agendar Cita</a>
+    <a href="#" onclick="mostrar('servicios'); return false;" tabindex="0">Servicios y Costos</a>
+    <a href="#" onclick="mostrar('ubicacion'); return false;" tabindex="0">Ubicación</a>
+    <a href="#" onclick="mostrar('informacion'); return false;" tabindex="0">Información</a>
+    <a href="#" onclick="mostrar('agendar'); return false;" tabindex="0">Agendar Cita</a>
   </nav>
 
   <main>
@@ -379,10 +384,10 @@ Cerrado: domingo
       </div>
     </section>
     <section id="agendar" tabindex="-1">
-  <div style="background:#fff0fb; padding:40px; border-radius:20px; box-shadow:0 6px 16px rgba(160, 80, 180, 0.15); max-width:700px; margin:0 auto; text-align:center;">
-    <h2 style="color:#a044b8; font-size:2em; margin-bottom:25px; text-shadow:1px 1px 3px #e5c3f3;">Agendar una Cita</h2>
-    <p style="font-size:1.2em; margin-bottom:30px;">Puedes agendar tu consulta de manera fácil a través de Doctoralia o por WhatsApp:</p>
+      <div style="background:#fff0fb; padding:40px; border-radius:20px; box-shadow:0 6px 16px rgba(160, 80, 180, 0.15); max-width:700px; margin:0 auto; text-align:center;">
+        <h2 style="color:#a044b8; font-size:2em; margin-bottom:25px; text-shadow:1px 1px 3px #e5c3f3;">Agendar una Cita</h2>
+        <p style="font-size:1.2em; margin-bottom:30px;">Puedes agendar tu consulta de manera fácil a través de Doctoralia o por WhatsApp:</p>
 
-    <div style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
-      <a href="https://www.doctoralia.com.mx/yanet-ivonne-aranda-gonzalez" target="_blank" style="text-decoration:none;">
-        <button style="background:#7d3dbd; color:white; border:none; border-radius:12px; padding:
+        <div style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
+          <a href="https://www.doctoralia.com.mx/yanet-ivonne-aranda-gonzalez" target="_blank" style="text-decoration:none;">
+            <button style="background:#7d3dbd; color:white; border:none; border-radius:12px; padding:15px 30px; font-size:1.1em; box-shadow:0 4
