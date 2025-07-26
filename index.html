@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #d4b3f5; /* Fondo elegante */
+      background-color: #f8f0ff;
       color: #333;
       min-height: 100vh;
       display: flex;
@@ -21,7 +21,7 @@
     }
     header {
       text-align: center;
-      background-color: #d4b3f5; /* Mantener fondo coherente */
+      background-image: url('fondo.jpg'); 
       background-size: cover;
       background-position: center;
       padding: 60px 20px;
@@ -30,10 +30,16 @@
       color: white;
     }
     header::after {
-      display: none; /* Elimina capa oscura */
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
     }
     header img {
-      width: 180px;
+      width: 120px;
       border-radius: 50%;
       border: 4px solid white;
       position: relative;
@@ -281,10 +287,10 @@
   </header>
 
   <nav>
-    <a href="#" onclick="mostrar('servicios'); return false;" tabindex="0">Servicios y Costos</a>
-    <a href="#" onclick="mostrar('ubicacion'); return false;" tabindex="0">Ubicación</a>
-    <a href="#" onclick="mostrar('informacion'); return false;" tabindex="0">Información</a>
-    <a href="#" onclick="mostrar('agendar'); return false;" tabindex="0">Agendar Cita</a>
+    <a onclick="mostrar('servicios')" tabindex="0">Servicios y Costos</a>
+    <a onclick="mostrar('ubicacion')" tabindex="0">Ubicación</a>
+    <a onclick="mostrar('informacion')" tabindex="0">Información</a>
+    <a onclick="mostrar('agendar')" tabindex="0">Agendar Cita</a>
   </nav>
 
   <main>
@@ -384,11 +390,33 @@ Cerrado: domingo
       </div>
     </section>
     <section id="agendar" tabindex="-1">
-      <div style="background:#fff0fb; padding:40px; border-radius:20px; box-shadow:0 6px 16px rgba(160, 80, 180, 0.15); max-width:700px; margin:0 auto; text-align:center;">
-        <h2 style="color:#a044b8; font-size:2em; margin-bottom:25px; text-shadow:1px 1px 3px #e5c3f3;">Agendar una Cita</h2>
-        <p style="font-size:1.2em; margin-bottom:30px;">Puedes agendar tu consulta de manera fácil a través de Doctoralia o por WhatsApp:</p>
+  <div style="background:#fff0fb; padding:40px; border-radius:20px; box-shadow:0 6px 16px rgba(160, 80, 180, 0.15); max-width:700px; margin:0 auto; text-align:center;">
+    <h2 style="color:#a044b8; font-size:2em; margin-bottom:25px; text-shadow:1px 1px 3px #e5c3f3;">Agendar una Cita</h2>
+    <p style="font-size:1.2em; margin-bottom:30px;">Puedes agendar tu consulta de manera fácil a través de Doctoralia o por WhatsApp:</p>
 
-        <div style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
-          <a href="https://www.doctoralia.com.mx/yanet-ivonne-aranda-gonzalez" target="_blank" style="text-decoration:none;">
-            <button style="background:#7d3dbd; color:white; border:none; border-radius>
-      </html>
+    <div style="display:flex; justify-content:center; gap:25px; flex-wrap:wrap;">
+      <a href="https://www.doctoralia.com.mx/yanet-ivonne-aranda-gonzalez" target="_blank" style="text-decoration:none;">
+        <button style="background:#7d3dbd; color:white; border:none; border-radius:12px; padding:15px 30px; font-size:1.1em; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; transition:background 0.3s;">
+          <i class="fas fa-calendar-check" style="margin-right:10px;"></i> Agendar en Doctoralia
+        </button>
+      </a>
+      <a href="https://wa.me/9619876543?text=Hola%20Doctora,%20me%20gustaría%20agendar%20una%20consulta" target="_blank" style="text-decoration:none;">
+        <button style="background:#25D366; color:white; border:none; border-radius:12px; padding:15px 30px; font-size:1.1em; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; transition:background 0.3s;">
+          <i class="fab fa-whatsapp" style="margin-right:10px;"></i> Agendar por WhatsApp
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      // Llevar foco para accesibilidad
+      document.getElementById(id).focus();
+    }
+  </script>
+</body>
+</html>
